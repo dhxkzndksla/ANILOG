@@ -2447,13 +2447,12 @@ function exportUpdatedHTML() {
 
 
 
-async function toggleAdmin() {
+function toggleAdmin() {
   const panel = document.getElementById("adminPanel");
-  if (!adminUnlocked) {
-    await signInAdmin();
-    return;
-  }
-  panel.style.display = panel.style.display === "none" ? "block" : "none";
+
+  panel.style.display =
+    panel.style.display === "none" ? "block" : "none";
+
   if (panel.style.display === "block") {
     populateAdminSelect();
     if (!editingNewAnime) loadAnimeEdit();
